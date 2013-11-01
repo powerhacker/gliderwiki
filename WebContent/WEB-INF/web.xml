@@ -28,7 +28,14 @@
 	<listener>
 	   <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
 	</listener>
-
+        <filter>  
+          <filter-name>XSS</filter-name>   
+          <filter-class>client.XssFilter</filter-class>  
+        </filter>  
+        <filter-mapping>  
+          <filter-name>XSS</filter-name>  
+          <url-pattern>/*</url-pattern>  
+        </filter-mapping>
 	<filter>
 		<filter-name>CharacterEncodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
